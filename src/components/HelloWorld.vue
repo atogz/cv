@@ -4,7 +4,11 @@
     <p>
       For a guide and recipes on how to configure / customize this project,<br />
       check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener"
+      <a
+        href="https://cli.vuejs.org"
+        target="_blank"
+        rel="noopener"
+        class="bg-blue-600"
         >vue-cli documentation</a
       >.
     </p>
