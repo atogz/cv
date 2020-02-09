@@ -1,8 +1,20 @@
 <template>
   <div>
-    <header class="absolute top-0 z-50">
-      <span @click="language = 'en'">en</span>
-      <span @click="language = 'ru'">ru</span>
+    <header class="absolute top-0 z-50 flex pl-10 w-full">
+      <div class="w-1/2 flex">
+        <img
+          src="./assets/image/uk.png"
+          @click="language = 'en'"
+          class="opacity-50 mr-2"
+          :class="{ 'opacity-100': language === 'en' }"
+        />
+        <img
+          src="./assets/image/russia.png"
+          @click="language = 'ru'"
+          class="opacity-50"
+          :class="{ 'opacity-100': language === 'ru' }"
+        />
+      </div>
     </header>
     <full-page ref="fullpage" :options="options" id="fullpage">
       <div class="section">
@@ -34,7 +46,7 @@ export default {
         lockAnchors: true,
         loopBottom: true
       },
-      language: "ru"
+      language: "en"
     };
   }
 };
@@ -46,7 +58,7 @@ export default {
 .fade-leave-active {
   transition: opacity 0.5s;
 }
-fade-enter,
+.fade-enter,
 .fade-leave-to {
   opacity: 0;
 }

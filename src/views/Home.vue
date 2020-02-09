@@ -1,9 +1,7 @@
 <template>
   <main class="welcome full flex flex-col justify-center ">
     <div class="w-full flex justify-center absolute top-0 mt-4">
-      <span class="logo pt-0 pb-0 pr-3 pl-3 rounded-full"
-        >.atogzweb</span
-      >
+      <span class="logo pt-0 pb-0 pr-3 pl-3 rounded-full">.atogzweb</span>
     </div>
     <div
       class="w-full flex flex-col text-white font-bold uppercase text-center"
