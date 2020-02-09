@@ -1,13 +1,15 @@
 <template>
   <main class="welcome full flex flex-col justify-center ">
     <div class="w-full flex justify-center absolute top-0 mt-4">
-      <span class="logo pt-0 pb-0 pr-3 pl-3 rounded-full">.atogzweb</span>
+      <span class="logo pt-0 pb-0 pr-3 pl-3 rounded-full"
+        >.atogzweb</span
+      >
     </div>
     <div
       class="w-full flex flex-col text-white font-bold uppercase text-center"
     >
-      <span class="w-full name text-bold">{{ name }}</span>
-      <span class="w-full surname">{{ surname }}</span>
+      <span class="w-full name text-bold">{{ getContent.name }}</span>
+      <span class="w-full surname">{{ getContent.surname }}</span>
       <span class="w-full description text-xl"
         >Fullstack Web Developer & IT Project Manager</span
       >
@@ -18,12 +20,26 @@
 <script>
 export default {
   name: "Home",
+  props: ["language"],
   components: {},
   data() {
     return {
-      name: "Павел",
-      surname: "Трофимов"
+      content: {
+        en: {
+          name: "Pavel",
+          surname: "Trofimov"
+        },
+        ru: {
+          name: "Павел",
+          surname: "Трофимов"
+        }
+      }
     };
+  },
+  computed: {
+    getContent() {
+      return this.content[this.language];
+    }
   }
 };
 </script>
@@ -38,8 +54,8 @@ export default {
   line-height: 4.75em;
 }
 .logo {
-    background-color: #6f43d6;
-    color: #fff;
+  background-color: #6f43d6;
+  color: #fff;
 }
 .name {
   font-size: 4em;

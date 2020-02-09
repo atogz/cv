@@ -11,18 +11,14 @@
         class="w-3/5 relative about-text flex flex-col items-center justify-center"
       >
         <p class="w-full text-2xl leading-loose mt-12">
-          I'm a UX/UI designer Austin based, who loves clean, simple & unique
-          design. I also enjoy crafting brand identities, icons, & illustration
-          work.
+          {{ mainMessage }}
         </p>
         <p class="w-full text-sm text-gray-500 mt-2">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis
-          erat sed elit sceleris Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit. Donec quis erat sed elit scelerisque iaculis. Nullam
-          nec porttitor justo, at iaculis risus. Aliquam erat volutpat. que
-          iaculis.
+          {{ secondaryMessage }}
         </p>
-        <div class="w-full text-center text-bold uppercase text-white mt-8">
+        <div
+          class="w-full text-center text-bold uppercase text-white mt-8 mb-6"
+        >
           <span class="border-b-2 border-white pb-1">my profile</span>
         </div>
       </div>
@@ -35,7 +31,12 @@ export default {
   name: "About",
   components: {},
   data() {
-    return {};
+    return {
+      mainMessage:
+        "I'm a UX/UI designer Austin based, who loves clean, simple & unique design. I also enjoy crafting brand identities, icons, & illustration work.",
+      secondaryMessage:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quiserat sed elit sceleris Lorem ipsum dolor sit amet, consecteturadipiscing elit. Donec quis erat sed elit scelerisque iaculis. Nullamnec porttitor justo, at iaculis risus. Aliquam erat volutpat. queiaculis."
+    };
   }
 };
 </script>

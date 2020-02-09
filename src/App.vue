@@ -1,8 +1,12 @@
 <template>
   <div>
+    <header class="absolute top-0 z-50">
+      <span @click="language = 'en'">en</span>
+      <span @click="language = 'ru'">ru</span>
+    </header>
     <full-page ref="fullpage" :options="options" id="fullpage">
       <div class="section">
-        <home-view />
+        <home-view :language="language" />
       </div>
       <div class="section">
         <about-view />
@@ -29,7 +33,8 @@ export default {
         //anchors: ["welcome", "about", "works"],
         lockAnchors: true,
         loopBottom: true
-      }
+      },
+      language: "ru"
     };
   }
 };
