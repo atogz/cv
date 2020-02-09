@@ -8,7 +8,7 @@
         <img src="../assets/image/logo.png" />
       </div>
       <div class="w-3/5 relative about-text flex flex-col items-center justify-center">
-        <p class="w-full text-2xl leading-loose">
+        <p class="w-full text-2xl leading-loose mt-12">
           I'm a UX/UI designer Austin based, who loves clean, simple & unique
           design. I also enjoy crafting brand identities, icons, & illustration
           work.
