@@ -6,7 +6,7 @@
     >
       <span class="w-full name text-bold">{{ name }}</span>
       <span class="w-full surname">{{ surname }}</span>
-      <span class="w-full description text-xl text-black"
+      <span class="w-full description text-xl"
         >Fullstack Web Developer & IT Project Manager</span
       >
     </div>
@@ -29,9 +29,10 @@ export default {
 
 <style>
 .main {
-  background-image: url("../assets/image/bg_home_1.png");
+  background-image: url("../assets/image/bg_home_2.png");
   height: 100vh;
   background-size: cover;
+    background-position: bottom;
   font-family: "Montserrat Bold", sans-serif;
   line-height: 4.75em;
 }
@@ -42,6 +43,8 @@ export default {
   font-size: 6em;
 }
 .description {
+    font-size: 30px;
+    color: #fe6192;
   text-transform: none;
   font-family: "Montserrat", sans-serif;
 }

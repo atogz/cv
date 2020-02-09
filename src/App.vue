@@ -5,7 +5,7 @@
         <home-view />
       </div>
       <div class="section">
-        <h2>Second 2</h2>
+        <about-view />
       </div>
       <div class="section">
         <h2>Second 3</h2>
@@ -16,17 +16,19 @@
 
 <script>
 import Home from "./views/Home";
+import About from "./views/About";
 export default {
   name: "App",
   components: {
-    "home-view": Home
+    "home-view": Home,
+    "about-view": About
   },
   data() {
     return {
       options: {
-        menu: "#menu",
-        anchors: ["page1", "page2", "page3"],
-        sectionsColor: ["#41b883", "#ff5f45", "#0798ec"]
+        //anchors: ["welcome", "about", "works"],
+        lockAnchors: true,
+        loopBottom: true
       }
     };
   }
