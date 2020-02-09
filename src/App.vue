@@ -1,32 +1,48 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+  <div>
+    <full-page ref="fullpage" :options="options" id="fullpage">
+      <div class="section">
+        <home-view />
+      </div>
+      <div class="section">
+        <about-view />
+      </div>
+      <div class="section">
+        <h2>Second 3</h2>
+      </div>
+    </full-page>
   </div>
 </template>
 
+<script>
+import Home from "./views/Home";
+import About from "./views/About";
+export default {
+  name: "App",
+  components: {
+    "home-view": Home,
+    "about-view": About
+  },
+  data() {
+    return {
+      options: {
+        //anchors: ["welcome", "about", "works"],
+        lockAnchors: true,
+        loopBottom: true
+      }
+    };
+  }
+};
+</script>
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap");
+@import url(http://allfont.ru/allfont.css?fonts=montserrat-bold);
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
 }
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
