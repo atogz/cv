@@ -25,11 +25,13 @@ export default {
       content: {
         en: {
           name: "Pavel",
-          surname: "Trofimov"
+          surname: "Trofimov",
         },
         ru: {
           name: "Павел",
-          surname: "Трофимов"
+          surname: "Трофимов",
+          helloMessage: "кто я",
+          helloMessageTitle: "привет"
         }
       }
     };

@@ -21,7 +21,7 @@
         <home-view :language="language" />
       </div>
       <div class="section">
-        <about-view />
+        <about-view :language="language" />
       </div>
       <div class="section">
         <h2>Second 3</h2>
