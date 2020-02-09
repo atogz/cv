@@ -1,8 +1,10 @@
 <template>
-  <main class="welcome full flex  items-center justify-center">
-    <div class="w-3/12"></div>
+  <main class="welcome full flex flex-col justify-center ">
+    <div class="w-full flex justify-center absolute top-0 mt-4">
+      <span class="logo pt-0 pb-0 pr-3 pl-3 rounded-full">.atogzweb</span>
+    </div>
     <div
-      class="w-6/12 flex flex-col text-white font-bold uppercase text-center"
+      class="w-full flex flex-col text-white font-bold uppercase text-center"
     >
       <span class="w-full name text-bold">{{ name }}</span>
       <span class="w-full surname">{{ surname }}</span>
@@ -10,7 +12,6 @@
         >Fullstack Web Developer & IT Project Manager</span
       >
     </div>
-    <div class="w-3/12"></div>
   </main>
 </template>
 
@@ -29,12 +30,16 @@ export default {
 
 <style>
 .welcome {
-  background-image: url("../assets/image/bg_home_1.png");
+  background-image: url("../assets/image/welcome_bg.png");
   height: 100vh;
   background-size: cover;
-  background-position: bottom;
+  background-position: center;
   font-family: "Montserrat Bold", sans-serif;
   line-height: 4.75em;
+}
+.logo {
+    background-color: #6f43d6;
+    color: #fff;
 }
 .name {
   font-size: 4em;
@@ -44,7 +49,7 @@ export default {
 }
 .description {
   font-size: 30px;
-  color: #fe6192;
+  color: #232227;
   text-transform: none;
   font-family: "Montserrat", sans-serif;
 }
