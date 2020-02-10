@@ -5,13 +5,13 @@
         <img
           src="./assets/image/uk.png"
           @click="language = 'en'"
-          class="opacity-50 mr-2"
+          class="cursor-pointer opacity-50 mr-2"
           :class="{ 'opacity-100': language === 'en' }"
         />
         <img
           src="./assets/image/russia.png"
           @click="language = 'ru'"
-          class="opacity-50"
+          class="cursor-pointer opacity-50"
           :class="{ 'opacity-100': language === 'ru' }"
         />
       </div>

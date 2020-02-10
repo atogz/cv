@@ -4,7 +4,7 @@
       <div
         class="about-title flex flex-col text-md pl-3 border-l-2 mt-20 ml-10 border-red-200"
       >
-        <span>{{ getContent.helloMessage }}</span>
+        <span class="text-white font-bold">{{ getContent.helloMessage }}</span>
       </div>
     </div>
     <div class="flex w-full">
