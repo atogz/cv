@@ -54,7 +54,7 @@ export default {
           mainMessage:
             "<p>I'm fullstack web-developer, based in Moscow, who loves clean, simple & unique solutions. I'm using the most modern techniques and prefer Vue.js + Express.js + mongoDB stack. For CSS i prefer Tailwind.css ♡</p>",
           secondaryMessage:
-            "<p>For some projects i pick vue.js + php + sql (PostgreSQL, MySQL) stack. I feel comfortable working with git (git flow), webpack and all sort of package managers, i know what CI/CD is, know how to use flexbox / grid layouts, but not afraid of using css-thingies including Bootstrap, Materal Design, Bulma.</p><p class='mt-2'>Have job experience with such products as: all kind of different CMS (WordPress, Drupal, Joomla, Opencart, Bitrix), php, jQuery. </p><p class='mt-2'>I'm also familiar with agile and SCRUM and can manage your project on any stage :)</p>"
+            "<p>For some projects i pick Vue.js + PHP + SQL (PostgreSQL, MySQL) stack. I feel comfortable working with git (git flow), webpack and all sort of package managers, i know what CI/CD is, know how to use flexbox / grid layouts, but not afraid of using css-thingies including Bootstrap, Materal Design, Bulma.</p><p class='mt-2'>Have job experience with such products as: all kind of different CMS (WordPress, Drupal, Joomla, Opencart, Bitrix), Netlify, Gatsby.js, Mirage.js, Nuxt.js. </p><p class='mt-2'>I'm also familiar with agile and SCRUM and can manage your project on any stage :)</p>"
         },
         ru: {
           helloMessageTitle: "кто я",
