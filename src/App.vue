@@ -1,6 +1,6 @@
 <template>
   <main>
-    <app-header :language="language" v-on:test="changeLanguage($event)" />
+    <app-header :language="language" v-on:changeLanguage="changeLanguage($event)" />
     <full-page ref="fullpage" :options="options" id="fullpage">
       <div class="section">
         <home-view :language="language" />

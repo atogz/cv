@@ -29,7 +29,7 @@ export default {
   methods: {
     changeLanguage(lang) {
       this.lang = lang;
-      this.$emit("test", this.lang);
+      this.$emit("changeLanguage", this.lang);
     }
   },
   created() {
