@@ -25,7 +25,7 @@ export default {
       content: {
         en: {
           name: "Pavel",
-          surname: "Trofimov",
+          surname: "Trofimov"
         },
         ru: {
           name: "Павел",
