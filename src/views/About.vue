@@ -65,7 +65,7 @@ export default {
           mainMessage:
             "<p>I'm fullstack web-developer, based in Moscow, who loves clean, simple & working solutions. I'm using the most modern techniques.</p>",
           secondaryMessage:
-            "<p>I'm working using git (git flow), i know what CI/CD is, how to use flexbox and grid layout, using modern language structures. I can write an API service on my own or mock one for quick prototyping :) </p>",
+            "<p>I'm working using git (git flow), i know what CI / CD is, how to use flexbox and grid layout, using modern language structures. I can write an API service on my own or mock one for quick prototyping :) </p>",
           profile: {
             link: "https://linkedin.com/",
             message: "My Profile"
@@ -77,7 +77,7 @@ export default {
           mainMessage:
             "Я фуллстек web-разработчик из Москвы.<br/>Решаю бизнес-задачи, используя релевантные и современные технологии.",
           secondaryMessage:
-            "В работе использую git (git flow), знаю, что такое CI/CD и как это всё настраивать, верстаю на flexbox/grid, использую последние стандарты языка. Сам пишу API и понятную документацию к нему :)",
+            "В работе использую git (git flow), знаю, что такое CI / CD и как это всё настраивать, верстаю на flexbox / grid, использую последние стандарты языка. Пишу API и понятную документацию к нему :)",
           profile: {
             link: "https://hh.ru/",
             message: "Резюме"
