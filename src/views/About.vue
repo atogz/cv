@@ -16,7 +16,7 @@
         </h3>
       </div>
     </div>
-    <div class="flex w-full">
+    <div class="flex w-full mt-4">
       <div class="w-full flex about-container">
         <div class="w-1/5"></div>
         <div
@@ -60,7 +60,7 @@ export default {
     return {
       content: {
         en: {
-          helloMessageTitle: "who i am",
+          helloMessageTitle: "about me",
           helloMessage: "hello",
           mainMessage:
             "<p>I'm fullstack web-developer, based in Moscow, who loves clean, simple & working solutions. I'm using the most modern techniques.</p>",
@@ -72,7 +72,7 @@ export default {
           }
         },
         ru: {
-          helloMessageTitle: "кто я",
+          helloMessageTitle: "обо мне",
           helloMessage: "привет",
           mainMessage:
             "Я фуллстек web-разработчик из Москвы.<br/>Решаю бизнес-задачи, используя релевантные и современные технологии.",
