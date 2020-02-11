@@ -29,7 +29,9 @@ export default {
         },
         ru: {
           name: "Павел",
-          surname: "Трофимов"
+          surname: "Трофимов",
+          helloMessage: "кто я",
+          helloMessageTitle: "привет"
         }
       }
     };

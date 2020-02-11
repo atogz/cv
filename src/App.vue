@@ -1,41 +1,28 @@
 <template>
-  <div>
-    <header class="absolute top-0 z-50 flex pl-10 w-full">
-      <div class="w-1/2 flex">
-        <img
-          src="./assets/image/uk.png"
-          @click="language = 'en'"
-          class="opacity-50 mr-2"
-          :class="{ 'opacity-100': language === 'en' }"
-        />
-        <img
-          src="./assets/image/russia.png"
-          @click="language = 'ru'"
-          class="opacity-50"
-          :class="{ 'opacity-100': language === 'ru' }"
-        />
-      </div>
-    </header>
+  <main>
+    <app-header :language="language" v-on:changeLanguage="changeLanguage($event)" />
     <full-page ref="fullpage" :options="options" id="fullpage">
       <div class="section">
         <home-view :language="language" />
       </div>
       <div class="section">
-        <about-view />
+        <about-view :language="language" />
       </div>
       <div class="section">
         <h2>Second 3</h2>
       </div>
     </full-page>
-  </div>
+  </main>
 </template>
 
 <script>
 import Home from "./views/Home";
 import About from "./views/About";
+import Header from "./components/Header";
 export default {
   name: "App",
   components: {
+    "app-header": Header,
     "home-view": Home,
     "about-view": About
   },
@@ -48,6 +35,11 @@ export default {
       },
       language: "en"
     };
+  },
+  methods: {
+    changeLanguage(lang) {
+      this.language = lang;
+    }
   }
 };
 </script>
