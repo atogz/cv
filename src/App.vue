@@ -1,6 +1,9 @@
 <template>
   <main>
-    <app-header :language="language" v-on:changeLanguage="changeLanguage($event)" />
+    <app-header
+      :language="language"
+      v-on:changeLanguage="changeLanguage($event)"
+    />
     <full-page ref="fullpage" :options="options" id="fullpage">
       <div class="section">
         <home-view :language="language" />
@@ -9,7 +12,7 @@
         <about-view :language="language" />
       </div>
       <div class="section">
-        <h2>Second 3</h2>
+        <my-work-view :language="language" />
       </div>
     </full-page>
   </main>
@@ -18,13 +21,15 @@
 <script>
 import Home from "./views/Home";
 import About from "./views/About";
+import MyWork from "./views/MyWork";
 import Header from "./components/Header";
 export default {
   name: "App",
   components: {
     "app-header": Header,
     "home-view": Home,
-    "about-view": About
+    "about-view": About,
+    "my-work-view": MyWork
   },
   data() {
     return {
