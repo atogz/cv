@@ -4,15 +4,13 @@
       <div
         class="about-title flex flex-col text-md pl-3 border-l-2 mt-20 ml-10 border-red-200"
       >
-        <span class="text-white font-bold">{{
-          getContent.helloMessageTitle
-        }}</span>
+        <span class="text-white font-bold">{{ getContent.subtitle }}</span>
       </div>
     </div>
     <div class="w-full flex justify-center">
       <div class="about-title__message flex flex-col text-md pl-3 ml-12">
         <h3 class="text-white font-bold text-6xl uppercase ml-10">
-          {{ getContent.helloMessage }}
+          {{ getContent.title }}
         </h3>
       </div>
     </div>
@@ -60,27 +58,27 @@ export default {
     return {
       content: {
         en: {
-          helloMessageTitle: "about me",
-          helloMessage: "hello",
+          subtitle: "about me",
+          title: "hello",
           mainMessage:
             "<p>I'm fullstack web-developer, based in Moscow, who loves clean, simple & working solutions. I'm using the most modern techniques.</p>",
           secondaryMessage:
             "<p>I'm working using git (git flow), i know what CI / CD is, how to use flexbox and grid layout, using modern language structures. I can write an API service on my own or mock one for quick prototyping :) </p>",
           profile: {
             link: "https://linkedin.com/",
-            message: "My Profile"
+            message: "linkedin"
           }
         },
         ru: {
-          helloMessageTitle: "обо мне",
-          helloMessage: "привет",
+          subtitle: "обо мне",
+          title: "привет",
           mainMessage:
-            "Я фуллстек web-разработчик из Москвы.<br/>Решаю бизнес-задачи, используя релевантные и современные технологии.",
+            "Я фуллстек web-разработчик из Москвы.<br/>Решаю бизнес-задачи, используя современные релевантные технологии.",
           secondaryMessage:
             "В работе использую git (git flow), знаю, что такое CI / CD и как это всё настраивать, верстаю на flexbox / grid, использую последние стандарты языка. Пишу API и понятную документацию к нему :)",
           profile: {
             link: "https://hh.ru/",
-            message: "Резюме"
+            message: "hh.ru"
           }
         }
       }
