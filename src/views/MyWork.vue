@@ -14,6 +14,55 @@
         </h3>
       </div>
     </div>
+    <div class="w-full flex mt-10">
+      <div
+        class="w-1/4"
+        @click="activeWorkCategory = 'all'"
+        :class="{ 'bg-gray-500': activeWorkCategory === 'all' }"
+      >
+        All
+      </div>
+      <div
+        class="w-1/4"
+        @click="activeWorkCategory = 'vue'"
+        :class="{ 'bg-gray-500': activeWorkCategory === 'vue' }"
+      >
+        Vue.js
+      </div>
+      <div
+        class="w-1/4"
+        @click="activeWorkCategory = 'javascript'"
+        :class="{ 'bg-gray-500': activeWorkCategory === 'javascript' }"
+      >
+        JavaScript
+      </div>
+      <div
+        class="w-1/4"
+        @click="activeWorkCategory = 'php'"
+        :class="{ 'bg-gray-500': activeWorkCategory === 'php' }"
+      >
+        PHP
+      </div>
+    </div>
+    <div class="w-full flex flex-wrap">
+      <div
+        class="w-1/5 flex flex-col border-2 border-gray-400"
+        v-for="project in getProjectsByCategory"
+        :key="project.id"
+      >
+        <div class="w-full">
+          {{ project.name }}
+        </div>
+        <div class="w-full">
+          <span v-for="category in project.category" :key="category">
+            {{ category }}</span
+          >
+        </div>
+        <div class="w-full">
+          {{ project }}
+        </div>
+      </div>
+    </div>
   </main>
 </template>
 
@@ -24,6 +73,7 @@ export default {
   components: {},
   data() {
     return {
+      activeWorkCategory: "all",
       content: {
         en: {
           subtitle: "awesome projects",
@@ -35,7 +85,65 @@ export default {
           profile: {
             link: "https://linkedin.com/",
             message: "linkedin"
-          }
+          },
+          projects: [
+            {
+              id: 1,
+              category: ["php", "vue", "javascript"],
+              name: "akvacity.ru",
+              url: "#",
+              github: "github.com/atogz/"
+            },
+            {
+              id: 2,
+              category: ["php", "javascript"],
+              name: "coral-club.ru",
+              url: "#",
+              github: "github.com/atogz/"
+            },
+            {
+              id: 3,
+              category: ["php", "vue", "javascript"],
+              name: "ru.coral.club",
+              url: "#",
+              github: "github.com/atogz/"
+            },
+            {
+              id: 4,
+              category: ["javascript"],
+              name: "geniapolis.ru",
+              url: "#",
+              github: "github.com/atogz/"
+            },
+            {
+              id: 5,
+              category: ["vue", "javascript"],
+              name: "m.akvacity.ru",
+              url: "#",
+              github: "github.com/atogz/"
+            },
+            {
+              id: 6,
+              category: ["vue", "javascript"],
+              name: "akvacity ORM",
+              url: "#",
+              github: "github.com/atogz/"
+            },
+            {
+              id: 7,
+              category: ["php", "javascript"],
+              name: "cba.coral.club",
+              url: "#",
+              github: "github.com/atogz/"
+            },
+            {
+              id: 8,
+              category: ["vue", "javascript"],
+              name: "workstation proto",
+              url: "#",
+              github: "github.com/atogz/"
+            }
+          ]
         },
         ru: {
           subtitle: "последние работы",
@@ -55,6 +163,18 @@ export default {
   computed: {
     getContent() {
       return this.content[this.language];
+    },
+    getProjectsByCategory() {
+      const projects = this.getContent.projects.filter(project => {
+        return project.category.find(item => {
+          return this.activeWorkCategory === item;
+        });
+      });
+      if (!projects.length) {
+        return this.getContent.projects;
+      } else {
+        return projects;
+      }
     }
   }
 };
