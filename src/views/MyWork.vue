@@ -2,7 +2,7 @@
   <main class="my-work">
     <div class="w-full flex justify-center">
       <div
-        class="my-work-title flex flex-col text-md pl-3 border-l-2 mt-20 ml-10 border-red-200"
+        class="my-work-title flex flex-col text-md pl-3 border-l-2 ml-10 border-red-200"
       >
         <span class="text-gray-800 font-bold">{{ getContent.subtitle }}</span>
       </div>
@@ -14,54 +14,71 @@
         </h3>
       </div>
     </div>
-    <div class="w-full flex mt-10">
+    <div
+      class="flex w-full justify-center h-10 flex items-center text-sm mt-10"
+    >
       <div
-        class="w-1/4"
+        class="mr-4 text-gray-600 uppercase"
         @click="activeWorkCategory = 'all'"
-        :class="{ 'bg-gray-500': activeWorkCategory === 'all' }"
+        :class="{
+          'text-purple-600 line-through': activeWorkCategory === 'all'
+        }"
       >
         All
       </div>
       <div
-        class="w-1/4"
+        class="mr-4 text-gray-600 uppercase"
         @click="activeWorkCategory = 'vue'"
-        :class="{ 'bg-gray-500': activeWorkCategory === 'vue' }"
+        :class="{
+          'text-purple-600 line-through': activeWorkCategory === 'vue'
+        }"
       >
         Vue.js
       </div>
       <div
-        class="w-1/4"
+        class="mr-4 text-gray-600 uppercase"
         @click="activeWorkCategory = 'javascript'"
-        :class="{ 'bg-gray-500': activeWorkCategory === 'javascript' }"
+        :class="{
+          'text-purple-600 line-through': activeWorkCategory === 'javascript'
+        }"
       >
         JavaScript
       </div>
       <div
-        class="w-1/4"
+        class="mr-4 text-gray-600 uppercase"
         @click="activeWorkCategory = 'php'"
-        :class="{ 'bg-gray-500': activeWorkCategory === 'php' }"
+        :class="{
+          'text-purple-600 line-through': activeWorkCategory === 'php'
+        }"
       >
         PHP
       </div>
     </div>
-    <div class="w-full flex flex-wrap">
-      <div
-        class="w-1/5 flex flex-col border-2 border-gray-400"
-        v-for="project in getProjectsByCategory"
-        :key="project.id"
-      >
-        <div class="w-full">
-          {{ project.name }}
-        </div>
-        <div class="w-full">
-          <span v-for="category in project.category" :key="category">
-            {{ category }}</span
+    <div class="w-full">
+      <transition-group name="bounce" class="flex w-full flex-wrap" mode="out-in">
+        <div
+          class="w-1/5 flex flex-col px-6 py-6"
+          v-for="project in getProjectsByCategory"
+          :key="project.id"
+        >
+          <div
+            class="w-full flex flex-col bg-purple-700 text-white justify-center items-center mr-3 rounded"
           >
+            <div class="w-full text-center">
+              <a :href="project.url"> {{ project.name }}</a>
+            </div>
+            <div class="w-full text-center">
+              <span
+                class="rounded-full bg-gray-500 text-gray-700 px-3 text-sm font-thin"
+                v-for="category in project.category"
+                :key="category"
+              >
+                {{ category }}</span
+              >
+            </div>
+          </div>
         </div>
-        <div class="w-full">
-          {{ project }}
-        </div>
-      </div>
+      </transition-group>
     </div>
   </main>
 </template>
@@ -119,7 +136,7 @@ export default {
               id: 5,
               category: ["vue", "javascript"],
               name: "m.akvacity.ru",
-              url: "#",
+              url: "google.com",
               github: "github.com/atogz/"
             },
             {
@@ -165,15 +182,14 @@ export default {
       return this.content[this.language];
     },
     getProjectsByCategory() {
-      const projects = this.getContent.projects.filter(project => {
-        return project.category.find(item => {
-          return this.activeWorkCategory === item;
-        });
-      });
-      if (!projects.length) {
+      if (this.activeWorkCategory === "all") {
         return this.getContent.projects;
       } else {
-        return projects;
+        return this.getContent.projects.filter(project => {
+          return project.category.find(item => {
+            return this.activeWorkCategory === item;
+          });
+        });
       }
     }
   }
