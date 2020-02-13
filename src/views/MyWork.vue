@@ -55,23 +55,28 @@
       </div>
     </div>
     <div class="w-full">
-      <transition-group name="bounce" class="flex w-full flex-wrap" mode="out-in">
+      <transition-group
+        name="bounce"
+        class="flex w-full flex-wrap"
+        mode="out-in"
+      >
         <div
           class="w-1/5 flex flex-col px-6 py-6"
           v-for="project in getProjectsByCategory"
           :key="project.id"
         >
           <div
-            class="w-full flex flex-col bg-purple-700 text-white justify-center items-center mr-3 rounded"
+            class="w-full flex flex-col bg-gray-200 hover:bg-gray-400 cursor-pointer justify-center items-center mr-3 rounded"
           >
             <div class="w-full text-center">
               <a :href="project.url"> {{ project.name }}</a>
             </div>
             <div class="w-full text-center">
               <span
-                class="rounded-full bg-gray-500 text-gray-700 px-3 text-sm font-thin"
+                class="rounded-full bg-gray-500 text-white px-3 text-sm font-thin"
                 v-for="category in project.category"
                 :key="category"
+                @click="activeWorkCategory = category"
               >
                 {{ category }}</span
               >
