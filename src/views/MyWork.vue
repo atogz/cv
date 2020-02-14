@@ -77,8 +77,7 @@
                 v-for="category in project.category"
                 :key="category"
               >
-                {{ category }}</span
-              >
+                {{ category }}</span>
             </div>
           </router-link>
         </div>
