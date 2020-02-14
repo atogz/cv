@@ -1,5 +1,5 @@
 <template>
-  <header class="absolute top-0 z-50 flex pl-10 w-full justify-between">
+  <header class="fixed top-0 z-50 flex pl-10 w-full justify-between">
     <div class="w-1/2 flex">
       <img
         src="../assets/image/uk.png"

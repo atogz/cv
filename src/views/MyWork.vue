@@ -1,6 +1,6 @@
 <template>
   <main class="my-work">
-    <div class="w-full flex justify-center">
+    <div class="w-full flex justify-center mt-20">
       <div
         class="my-work-title flex flex-col text-md pl-3 border-l-2 ml-10 border-red-200"
       >
@@ -8,7 +8,7 @@
       </div>
     </div>
     <div class="w-full flex justify-center">
-      <div class="my-work-title__mesage flex flex-col text-md pl-3 ml-12">
+      <div class="my-work-title__message flex flex-col text-md pl-3 ml-12">
         <h3 class="text-gray-800 font-bold text-6xl uppercase ml-10">
           {{ getContent.title }}
         </h3>
@@ -18,7 +18,7 @@
       class="flex w-full justify-center h-10 flex items-center text-sm mt-10 font-bold cursor-pointer"
     >
       <div
-        class="mr-4 text-gray-600 uppercase"
+        class="text-gray-600 uppercase p-2 text-center"
         @click="activeWorkCategory = 'all'"
         :class="{
           'text-purple-600 line-through': activeWorkCategory === 'all'
@@ -27,7 +27,7 @@
         All
       </div>
       <div
-        class="mr-4 text-gray-600 uppercase"
+        class="text-gray-600 uppercase p-2 text-center"
         @click="activeWorkCategory = 'vue'"
         :class="{
           'text-purple-600 line-through': activeWorkCategory === 'vue'
@@ -36,7 +36,7 @@
         Vue.js
       </div>
       <div
-        class="mr-4 text-gray-600 uppercase"
+        class="text-gray-600 uppercase p-2 text-center"
         @click="activeWorkCategory = 'javascript'"
         :class="{
           'text-purple-600 line-through': activeWorkCategory === 'javascript'
@@ -45,7 +45,7 @@
         JavaScript
       </div>
       <div
-        class="mr-4 text-gray-600 uppercase"
+        class="text-gray-600 uppercase p-2 text-center"
         @click="activeWorkCategory = 'php'"
         :class="{
           'text-purple-600 line-through': activeWorkCategory === 'php'
@@ -65,7 +65,7 @@
           v-for="project in getProjectsByCategory"
           :key="project.id"
         >
-          <div
+          <router-link to="/test" :key="project.id"
             class="w-full flex flex-col bg-gray-200 hover:bg-gray-400 cursor-pointer justify-center items-center mr-3 rounded"
           >
             <div class="w-full text-center">
@@ -81,7 +81,7 @@
                 {{ category }}</span
               >
             </div>
-          </div>
+          </router-link>
         </div>
       </transition-group>
     </div>
@@ -171,7 +171,7 @@ export default {
               name: "employee motivation module",
               url: "#",
               github: "github.com/atogz/"
-            },
+            }
           ]
         },
         ru: {
@@ -269,6 +269,28 @@ export default {
         });
       }
     }
+  },
+  methods: {
+    navigate (event) {
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        if (event.wheelDelta === -120 || event.key === "ArrowDown") {
+          this.$router.push("/");
+        }
+      }
+      if (window.scrollY == 0) {
+        if (event.wheelDelta === 120 || event.key === "ArrowUp") {
+          this.$router.push("/about");
+        }
+      }
+    }
+  },
+  created () {
+    window.addEventListener('wheel', this.navigate);
+    window.addEventListener("keyup", this.navigate);
+  },
+  destroyed () {
+    window.removeEventListener('wheel', this.navigate);
+    window.removeEventListener("keyup", this.navigate);
   }
 };
 </script>
@@ -276,9 +298,7 @@ export default {
 <style>
 .my-work {
   background-image: url("../assets/image/mywork_bg.png");
-  height: 100vh;
   background-size: cover;
-  background-position: bottom;
   font-family: "Montserrat Bold", sans-serif;
   line-height: 4.75em;
   color: #333;

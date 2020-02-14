@@ -39,7 +39,24 @@ export default {
   computed: {
     getContent() {
       return this.content[this.language];
+    },
+  },
+  methods: {
+    navigate (event) {
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        if (event.wheelDelta === -120 || event.key === "ArrowDown") {
+          this.$router.push("/about");
+        }
+      }
     }
+  },
+  created () {
+    window.addEventListener('wheel', this.navigate);
+    window.addEventListener("keyup", this.navigate);
+  },
+  destroyed () {
+    window.removeEventListener('wheel', this.navigate);
+    window.removeEventListener("keyup", this.navigate);
   }
 };
 </script>
