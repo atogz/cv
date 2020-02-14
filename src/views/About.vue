@@ -88,6 +88,25 @@ export default {
     getContent() {
       return this.content[this.language];
     }
+  },
+  methods: {
+    navigate (event) {
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        if (event.wheelDelta == 120 || event.key == "ArrowUp") {
+          this.$router.push("/");
+        } else if (event.wheelDelta == -120 || event.key == "ArrowDown") {
+          this.$router.push("/projects");
+        } else return false;
+      }
+    }
+  },
+  created () {
+    window.addEventListener('wheel', this.navigate);
+    window.addEventListener("keyup", this.navigate);
+  },
+  destroyed () {
+    window.removeEventListener('wheel', this.navigate);
+    window.removeEventListener("keyup", this.navigate);
   }
 };
 </script>

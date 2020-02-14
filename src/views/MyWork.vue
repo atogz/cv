@@ -1,6 +1,6 @@
 <template>
   <main class="my-work">
-    <div class="w-full flex justify-center">
+    <div class="w-full flex justify-center mt-20">
       <div
         class="my-work-title flex flex-col text-md pl-3 border-l-2 ml-10 border-red-200"
       >
@@ -8,7 +8,7 @@
       </div>
     </div>
     <div class="w-full flex justify-center">
-      <div class="my-work-title__mesage flex flex-col text-md pl-3 ml-12">
+      <div class="my-work-title__message flex flex-col text-md pl-3 ml-12">
         <h3 class="text-gray-800 font-bold text-6xl uppercase ml-10">
           {{ getContent.title }}
         </h3>
@@ -65,7 +65,7 @@
           v-for="project in getProjectsByCategory"
           :key="project.id"
         >
-          <div
+          <router-link to="/test" :key="project.id"
             class="w-full flex flex-col bg-gray-200 hover:bg-gray-400 cursor-pointer justify-center items-center mr-3 rounded"
           >
             <div class="w-full text-center">
@@ -81,7 +81,7 @@
                 {{ category }}</span
               >
             </div>
-          </div>
+          </router-link>
         </div>
       </transition-group>
     </div>
@@ -269,6 +269,23 @@ export default {
         });
       }
     }
+  },
+  methods: {
+    handleScroll (event) {
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        if (event.wheelDelta == 120) {
+          this.$router.push("/about");
+        } else {
+          this.$router.push("/");
+        }
+      }
+    }
+  },
+  created () {
+    window.addEventListener('wheel', this.handleScroll);
+  },
+  destroyed () {
+    window.removeEventListener('wheel', this.handleScroll);
   }
 };
 </script>
