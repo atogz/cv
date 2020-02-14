@@ -13,63 +13,279 @@ export default new Vuex.Store({
          category: ["php", "vue", "javascript"],
          name: "akvacity.ru",
          url: "#",
-         github: "github.com/atogz/"
+         github: "github.com/atogz/",
+         summary: 'Short project summary',
+         description: 'Full Project Description',
+         images: [
+           {
+             id: 1,
+             name: "Изображение 1",
+             url: "google.com"
+           },
+           {
+             id: 2,
+             name: "Изображение 2",
+             url: "google.com"
+           },
+           {
+             id: 3,
+             name: "Изображение 3",
+             url: "google.com"
+           },
+           {
+             id: 4,
+             name: "Изображение 4",
+             url: "google.com"
+           },
+         ]
        },
        {
          id: 2,
          category: ["php", "javascript"],
          name: "coral-club.ru",
          url: "#",
-         github: "github.com/atogz/"
+         github: "github.com/atogz/",
+         summary: 'Short project summary',
+         description: 'Full Project Description',
+         images: [
+           {
+             id: 1,
+             name: "Изображение 1",
+             url: "google.com"
+           },
+           {
+             id: 2,
+             name: "Изображение 2",
+             url: "google.com"
+           },
+           {
+             id: 3,
+             name: "Изображение 3",
+             url: "google.com"
+           },
+           {
+             id: 4,
+             name: "Изображение 4",
+             url: "google.com"
+           },
+         ]
        },
        {
          id: 3,
          category: ["php", "vue", "javascript"],
          name: "ru.coral.club",
          url: "#",
-         github: "github.com/atogz/"
+         github: "github.com/atogz/",
+         summary: 'Short project summary',
+         description: 'Full Project Description',
+         images: [
+           {
+             id: 1,
+             name: "Изображение 1",
+             url: "google.com"
+           },
+           {
+             id: 2,
+             name: "Изображение 2",
+             url: "google.com"
+           },
+           {
+             id: 3,
+             name: "Изображение 3",
+             url: "google.com"
+           },
+           {
+             id: 4,
+             name: "Изображение 4",
+             url: "google.com"
+           },
+         ]
        },
        {
          id: 4,
          category: ["javascript"],
          name: "geniapolis.ru",
          url: "#",
-         github: "github.com/atogz/"
+         github: "github.com/atogz/",
+         summary: 'Short project summary',
+         description: 'Full Project Description',
+         images: [
+           {
+             id: 1,
+             name: "Изображение 1",
+             url: "google.com"
+           },
+           {
+             id: 2,
+             name: "Изображение 2",
+             url: "google.com"
+           },
+           {
+             id: 3,
+             name: "Изображение 3",
+             url: "google.com"
+           },
+           {
+             id: 4,
+             name: "Изображение 4",
+             url: "google.com"
+           },
+         ]
        },
        {
          id: 5,
          category: ["vue", "javascript"],
          name: "m.akvacity.ru",
          url: "google.com",
-         github: "github.com/atogz/"
+         github: "github.com/atogz/",
+         summary: 'Short project summary',
+         description: 'Full Project Description',
+         images: [
+           {
+             id: 1,
+             name: "Изображение 1",
+             url: "google.com"
+           },
+           {
+             id: 2,
+             name: "Изображение 2",
+             url: "google.com"
+           },
+           {
+             id: 3,
+             name: "Изображение 3",
+             url: "google.com"
+           },
+           {
+             id: 4,
+             name: "Изображение 4",
+             url: "google.com"
+           },
+         ]
        },
        {
          id: 6,
          category: ["vue", "javascript"],
          name: "akvacity workstation",
          url: "#",
-         github: "github.com/atogz/"
+         github: "github.com/atogz/",
+         summary: 'Short project summary',
+         description: 'Full Project Description',
+         images: [
+           {
+             id: 1,
+             name: "Изображение 1",
+             url: "google.com"
+           },
+           {
+             id: 2,
+             name: "Изображение 2",
+             url: "google.com"
+           },
+           {
+             id: 3,
+             name: "Изображение 3",
+             url: "google.com"
+           },
+           {
+             id: 4,
+             name: "Изображение 4",
+             url: "google.com"
+           },
+         ]
        },
        {
          id: 7,
          category: ["php", "javascript"],
          name: "cba.coral.club",
          url: "#",
-         github: "github.com/atogz/"
+         github: "github.com/atogz/",
+         summary: 'Short project summary',
+         description: 'Full Project Description',
+         images: [
+           {
+             id: 1,
+             name: "Изображение 1",
+             url: "google.com"
+           },
+           {
+             id: 2,
+             name: "Изображение 2",
+             url: "google.com"
+           },
+           {
+             id: 3,
+             name: "Изображение 3",
+             url: "google.com"
+           },
+           {
+             id: 4,
+             name: "Изображение 4",
+             url: "google.com"
+           },
+         ]
        },
        {
          id: 8,
          category: ["vue", "javascript"],
          name: "crude template app",
          url: "#",
-         github: "github.com/atogz/"
+         github: "github.com/atogz/",
+         summary: 'Short project summary',
+         description: 'Full Project Description',
+         images: [
+           {
+             id: 1,
+             name: "Изображение 1",
+             url: "google.com"
+           },
+           {
+             id: 2,
+             name: "Изображение 2",
+             url: "google.com"
+           },
+           {
+             id: 3,
+             name: "Изображение 3",
+             url: "google.com"
+           },
+           {
+             id: 4,
+             name: "Изображение 4",
+             url: "google.com"
+           },
+         ]
        },
        {
          id: 9,
          category: ["php"],
          name: "employee motivation module",
          url: "#",
-         github: "github.com/atogz/"
+         github: "github.com/atogz/",
+         summary: 'Short project summary',
+         description: 'Full Project Description',
+         images: [
+           {
+             id: 1,
+             name: "Изображение 1",
+             url: "google.com"
+           },
+           {
+             id: 2,
+             name: "Изображение 2",
+             url: "google.com"
+           },
+           {
+             id: 3,
+             name: "Изображение 3",
+             url: "google.com"
+           },
+           {
+             id: 4,
+             name: "Изображение 4",
+             url: "google.com"
+           },
+         ]
        }
      ],
       ru: [
@@ -78,63 +294,279 @@ export default new Vuex.Store({
           category: ["php", "vue", "javascript"],
           name: "akvacity.ru",
           url: "#",
-          github: "github.com/atogz/"
+          github: "github.com/atogz/",
+          summary: 'Краткое описание проекта',
+          description: 'Полное описание проекта',
+          images: [
+            {
+              id: 1,
+              name: "Изображение 1",
+              url: "google.com"
+            },
+            {
+              id: 2,
+              name: "Изображение 2",
+              url: "google.com"
+            },
+            {
+              id: 3,
+              name: "Изображение 3",
+              url: "google.com"
+            },
+            {
+              id: 4,
+              name: "Изображение 4",
+              url: "google.com"
+            },
+          ]
         },
         {
           id: 2,
           category: ["php", "javascript"],
           name: "coral-club.ru",
           url: "#",
-          github: "github.com/atogz/"
+          github: "github.com/atogz/",
+          summary: 'Краткое описание проекта',
+          description: 'Полное описание проекта',
+          images: [
+            {
+              id: 1,
+              name: "Изображение 1",
+              url: "google.com"
+            },
+            {
+              id: 2,
+              name: "Изображение 2",
+              url: "google.com"
+            },
+            {
+              id: 3,
+              name: "Изображение 3",
+              url: "google.com"
+            },
+            {
+              id: 4,
+              name: "Изображение 4",
+              url: "google.com"
+            },
+          ]
         },
         {
           id: 3,
           category: ["php", "vue", "javascript"],
           name: "ru.coral.club",
           url: "#",
-          github: "github.com/atogz/"
+          github: "github.com/atogz/",
+          summary: 'Краткое описание проекта',
+          description: 'Полное описание проекта',
+          images: [
+            {
+              id: 1,
+              name: "Изображение 1",
+              url: "google.com"
+            },
+            {
+              id: 2,
+              name: "Изображение 2",
+              url: "google.com"
+            },
+            {
+              id: 3,
+              name: "Изображение 3",
+              url: "google.com"
+            },
+            {
+              id: 4,
+              name: "Изображение 4",
+              url: "google.com"
+            },
+          ]
         },
         {
           id: 4,
           category: ["javascript"],
           name: "geniapolis.ru",
           url: "#",
-          github: "github.com/atogz/"
+          github: "github.com/atogz/",
+          summary: 'Краткое описание проекта',
+          description: 'Полное описание проекта',
+          images: [
+            {
+              id: 1,
+              name: "Изображение 1",
+              url: "google.com"
+            },
+            {
+              id: 2,
+              name: "Изображение 2",
+              url: "google.com"
+            },
+            {
+              id: 3,
+              name: "Изображение 3",
+              url: "google.com"
+            },
+            {
+              id: 4,
+              name: "Изображение 4",
+              url: "google.com"
+            },
+          ]
         },
         {
           id: 5,
           category: ["vue", "javascript"],
           name: "m.akvacity.ru",
           url: "google.com",
-          github: "github.com/atogz/"
+          github: "github.com/atogz/",
+          summary: 'Краткое описание проекта',
+          description: 'Полное описание проекта',
+          images: [
+            {
+              id: 1,
+              name: "Изображение 1",
+              url: "google.com"
+            },
+            {
+              id: 2,
+              name: "Изображение 2",
+              url: "google.com"
+            },
+            {
+              id: 3,
+              name: "Изображение 3",
+              url: "google.com"
+            },
+            {
+              id: 4,
+              name: "Изображение 4",
+              url: "google.com"
+            },
+          ]
         },
         {
           id: 6,
           category: ["vue", "javascript"],
           name: "akvacity АРМ менеджера",
           url: "#",
-          github: "github.com/atogz/"
+          github: "github.com/atogz/",
+          summary: 'Краткое описание проекта',
+          description: 'Полное описание проекта',
+          images: [
+            {
+              id: 1,
+              name: "Изображение 1",
+              url: "google.com"
+            },
+            {
+              id: 2,
+              name: "Изображение 2",
+              url: "google.com"
+            },
+            {
+              id: 3,
+              name: "Изображение 3",
+              url: "google.com"
+            },
+            {
+              id: 4,
+              name: "Изображение 4",
+              url: "google.com"
+            },
+          ]
         },
         {
           id: 7,
           category: ["php", "javascript"],
           name: "cba.coral.club",
           url: "#",
-          github: "github.com/atogz/"
+          github: "github.com/atogz/",
+          summary: 'Краткое описание проекта',
+          description: 'Полное описание проекта',
+          images: [
+            {
+              id: 1,
+              name: "Изображение 1",
+              url: "google.com"
+            },
+            {
+              id: 2,
+              name: "Изображение 2",
+              url: "google.com"
+            },
+            {
+              id: 3,
+              name: "Изображение 3",
+              url: "google.com"
+            },
+            {
+              id: 4,
+              name: "Изображение 4",
+              url: "google.com"
+            },
+          ]
         },
         {
           id: 8,
           category: ["vue", "javascript"],
           name: "crude template app",
           url: "#",
-          github: "github.com/atogz/"
+          github: "github.com/atogz/",
+          summary: 'Краткое описание проекта',
+          description: 'Полное описание проекта',
+          images: [
+            {
+              id: 1,
+              name: "Изображение 1",
+              url: "google.com"
+            },
+            {
+              id: 2,
+              name: "Изображение 2",
+              url: "google.com"
+            },
+            {
+              id: 3,
+              name: "Изображение 3",
+              url: "google.com"
+            },
+            {
+              id: 4,
+              name: "Изображение 4",
+              url: "google.com"
+            },
+          ]
         },
         {
           id: 9,
           category: ["php"],
           name: "модуль мотивации сотрудников",
           url: "#",
-          github: "github.com/atogz/"
+          github: "github.com/atogz/",
+          summary: 'Краткое описание проекта',
+          description: 'Полное описание проекта',
+          images: [
+            {
+              id: 1,
+              name: "Изображение 1",
+              url: "google.com"
+            },
+            {
+              id: 2,
+              name: "Изображение 2",
+              url: "google.com"
+            },
+            {
+              id: 3,
+              name: "Изображение 3",
+              url: "google.com"
+            },
+            {
+              id: 4,
+              name: "Изображение 4",
+              url: "google.com"
+            },
+          ]
         }
       ]
     }
