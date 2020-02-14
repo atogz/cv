@@ -17,6 +17,7 @@
         },
         computed: {
             getContent() {
+                console.log(this.$store.getters.getProjectData(this.id));
                 return this.$store.getters.getProjectData(this.id);
             }
         },

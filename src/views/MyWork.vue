@@ -125,7 +125,7 @@ export default {
   },
   computed: {
     getProjects() {
-      return this.$store.state.projects;
+      return this.$store.state.projects[this.getLanguage];
     },
     filterProjectsByTag() {
       if (this.activeWorkCategory === "all") {
