@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import About from "../views/About.vue";
 import Projects from "../views/MyWork.vue";
+import Test from "../components/Project.vue";
 
 Vue.use(VueRouter);
 
@@ -27,6 +28,12 @@ const routes = [
     component: Projects,
     props: { language: "en" }
   },
+  {
+    path: "/projects/:id",
+    name: "project",
+    component: Test,
+  }
+
 
 ];
 

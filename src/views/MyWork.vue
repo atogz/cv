@@ -65,7 +65,7 @@
           v-for="project in getProjectsByCategory"
           :key="project.id"
         >
-          <router-link to="/test" :key="project.id"
+          <router-link :to="{ name: 'project', params: { id: project.id } }" :key="project.id"
             class="w-full flex flex-col bg-gray-200 hover:bg-gray-400 cursor-pointer justify-center items-center mr-3 rounded"
           >
             <div class="w-full text-center">
@@ -76,7 +76,6 @@
                 class="rounded-full bg-gray-500 text-white px-3 text-sm font-thin"
                 v-for="category in project.category"
                 :key="category"
-                @click="activeWorkCategory = category"
               >
                 {{ category }}</span
               >
@@ -108,71 +107,6 @@ export default {
             link: "https://linkedin.com/",
             message: "linkedin"
           },
-          projects: [
-            {
-              id: 1,
-              category: ["php", "vue", "javascript"],
-              name: "akvacity.ru",
-              url: "#",
-              github: "github.com/atogz/"
-            },
-            {
-              id: 2,
-              category: ["php", "javascript"],
-              name: "coral-club.ru",
-              url: "#",
-              github: "github.com/atogz/"
-            },
-            {
-              id: 3,
-              category: ["php", "vue", "javascript"],
-              name: "ru.coral.club",
-              url: "#",
-              github: "github.com/atogz/"
-            },
-            {
-              id: 4,
-              category: ["javascript"],
-              name: "geniapolis.ru",
-              url: "#",
-              github: "github.com/atogz/"
-            },
-            {
-              id: 5,
-              category: ["vue", "javascript"],
-              name: "m.akvacity.ru",
-              url: "google.com",
-              github: "github.com/atogz/"
-            },
-            {
-              id: 6,
-              category: ["vue", "javascript"],
-              name: "akvacity workstation",
-              url: "#",
-              github: "github.com/atogz/"
-            },
-            {
-              id: 7,
-              category: ["php", "javascript"],
-              name: "cba.coral.club",
-              url: "#",
-              github: "github.com/atogz/"
-            },
-            {
-              id: 8,
-              category: ["vue", "javascript"],
-              name: "crude template app",
-              url: "#",
-              github: "github.com/atogz/"
-            },
-            {
-              id: 9,
-              category: ["php"],
-              name: "employee motivation module",
-              url: "#",
-              github: "github.com/atogz/"
-            }
-          ]
         },
         ru: {
           subtitle: "последние работы",
@@ -185,90 +119,31 @@ export default {
             link: "https://hh.ru/",
             message: "hh.ru"
           },
-          projects: [
-            {
-              id: 1,
-              category: ["php", "vue", "javascript"],
-              name: "akvacity.ru",
-              url: "#",
-              github: "github.com/atogz/"
-            },
-            {
-              id: 2,
-              category: ["php", "javascript"],
-              name: "coral-club.ru",
-              url: "#",
-              github: "github.com/atogz/"
-            },
-            {
-              id: 3,
-              category: ["php", "vue", "javascript"],
-              name: "ru.coral.club",
-              url: "#",
-              github: "github.com/atogz/"
-            },
-            {
-              id: 4,
-              category: ["javascript"],
-              name: "geniapolis.ru",
-              url: "#",
-              github: "github.com/atogz/"
-            },
-            {
-              id: 5,
-              category: ["vue", "javascript"],
-              name: "m.akvacity.ru",
-              url: "google.com",
-              github: "github.com/atogz/"
-            },
-            {
-              id: 6,
-              category: ["vue", "javascript"],
-              name: "akvacity АРМ",
-              url: "#",
-              github: "github.com/atogz/"
-            },
-            {
-              id: 7,
-              category: ["php", "javascript"],
-              name: "cba.coral.club",
-              url: "#",
-              github: "github.com/atogz/"
-            },
-            {
-              id: 8,
-              category: ["vue", "javascript"],
-              name: "crud template app",
-              url: "#",
-              github: "github.com/atogz/"
-            },
-            {
-              id: 9,
-              category: ["php"],
-              name: "модуль онлайн мотивации",
-              url: "#",
-              github: "github.com/atogz/"
-            },
-          ]
         }
       }
     };
   },
   computed: {
-    getContent() {
-      return this.content[this.language];
+    getProjects() {
+      return this.$store.state.projects;
     },
     getProjectsByCategory() {
       if (this.activeWorkCategory === "all") {
-        return this.getContent.projects;
+        return this.getProjects;
       } else {
-        return this.getContent.projects.filter(project => {
+        return this.getProjects.filter(project => {
           return project.category.find(item => {
             return this.activeWorkCategory === item;
           });
         });
       }
-    }
+    },
+    getLanguage() {
+      return this.$store.getters.getCurrentLanguage;
+    },
+    getContent() {
+      return this.content[this.getLanguage];
+    },
   },
   methods: {
     navigate (event) {
