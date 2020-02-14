@@ -18,10 +18,10 @@
 <script>
 export default {
   name: "Home",
-  props: ["language"],
   components: {},
   data() {
     return {
+      language: "",
       content: {
         en: {
           name: "Pavel",
@@ -37,8 +37,11 @@ export default {
     };
   },
   computed: {
+    getLanguage() {
+      return this.$store.getters.getCurrentLanguage;
+    },
     getContent() {
-      return this.content[this.language];
+      return this.content[this.getLanguage];
     },
   },
   methods: {

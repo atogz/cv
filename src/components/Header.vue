@@ -5,13 +5,13 @@
         src="../assets/image/uk.png"
         @click="changeLanguage('en')"
         class="cursor-pointer opacity-50 mr-2"
-        :class="{ 'opacity-100': lang === 'en' }"
+        :class="{ 'opacity-100': getLanguage === 'en' }"
       />
       <img
         src="../assets/image/russia.png"
         @click="changeLanguage('ru')"
         class="cursor-pointer opacity-50"
-        :class="{ 'opacity-100': lang === 'ru' }"
+        :class="{ 'opacity-100': getLanguage === 'ru' }"
       />
     </div>
   </header>
@@ -23,17 +23,17 @@ export default {
   props: ["language"],
   data() {
     return {
-      lang: null
     };
   },
   methods: {
     changeLanguage(lang) {
-      this.lang = lang;
-      this.$emit("changeLanguage", this.lang);
+      this.$store.commit("changeLanguage", lang)
     }
   },
-  created() {
-    this.lang = this.language;
+  computed: {
+    getLanguage() {
+      return this.$store.getters.getCurrentLanguage;
+    },
   }
 };
 </script>

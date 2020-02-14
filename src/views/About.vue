@@ -85,9 +85,12 @@ export default {
     };
   },
   computed: {
+    getLanguage() {
+      return this.$store.getters.getCurrentLanguage;
+    },
     getContent() {
-      return this.content[this.language];
-    }
+      return this.content[this.getLanguage];
+    },
   },
   methods: {
     navigate (event) {
