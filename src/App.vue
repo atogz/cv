@@ -1,7 +1,6 @@
 <template>
   <main class="w-full overflow-hidden">
     <app-header
-      :language="language"
       v-on:changeLanguage="changeLanguage($event)"
     />
     <transition name="slide-fade" mode="out-in">
