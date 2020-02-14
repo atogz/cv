@@ -62,7 +62,7 @@
       >
         <div
           class="w-1/5 flex flex-col px-6 py-6"
-          v-for="project in getProjectsByCategory"
+          v-for="project in filterProjectsByTag"
           :key="project.id"
         >
           <router-link :to="{ name: 'project', params: { id: project.id } }" :key="project.id"
@@ -127,7 +127,7 @@ export default {
     getProjects() {
       return this.$store.state.projects;
     },
-    getProjectsByCategory() {
+    filterProjectsByTag() {
       if (this.activeWorkCategory === "all") {
         return this.getProjects;
       } else {

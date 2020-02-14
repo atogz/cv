@@ -77,8 +77,8 @@ export default new Vuex.Store({
       return state.language;
     },
     getProjectData: (state) => (id) => {
-      return state.projects.filter( project => {
-        return project.id === id;
+      return state.projects.find( project => {
+        return project.id == id;
       })
     }
   },
