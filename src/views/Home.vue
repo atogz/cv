@@ -43,13 +43,11 @@ export default {
   },
   methods: {
     navigate (event) {
-      console.log(event);
       if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-        if(event.wheelDelta == -120 || event.key == "ArrowDown") {
-          this.$router.push("about");
+        if (event.wheelDelta === -120 || event.key === "ArrowDown") {
+          this.$router.push("/about");
         }
       }
-
     }
   },
   created () {

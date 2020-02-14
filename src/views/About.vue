@@ -92,11 +92,14 @@ export default {
   methods: {
     navigate (event) {
       if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-        if (event.wheelDelta == 120 || event.key == "ArrowUp") {
-          this.$router.push("/");
-        } else if (event.wheelDelta == -120 || event.key == "ArrowDown") {
+        if (event.wheelDelta === -120 || event.key === "ArrowDown") {
           this.$router.push("/projects");
-        } else return false;
+        }
+      }
+      if (window.scrollY == 0) {
+        if (event.wheelDelta === 120 || event.key === "ArrowUp") {
+          this.$router.push("/");
+        }
       }
     }
   },

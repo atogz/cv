@@ -18,7 +18,7 @@
       class="flex w-full justify-center h-10 flex items-center text-sm mt-10 font-bold cursor-pointer"
     >
       <div
-        class="mr-4 text-gray-600 uppercase"
+        class="text-gray-600 uppercase p-2 text-center"
         @click="activeWorkCategory = 'all'"
         :class="{
           'text-purple-600 line-through': activeWorkCategory === 'all'
@@ -27,7 +27,7 @@
         All
       </div>
       <div
-        class="mr-4 text-gray-600 uppercase"
+        class="text-gray-600 uppercase p-2 text-center"
         @click="activeWorkCategory = 'vue'"
         :class="{
           'text-purple-600 line-through': activeWorkCategory === 'vue'
@@ -36,7 +36,7 @@
         Vue.js
       </div>
       <div
-        class="mr-4 text-gray-600 uppercase"
+        class="text-gray-600 uppercase p-2 text-center"
         @click="activeWorkCategory = 'javascript'"
         :class="{
           'text-purple-600 line-through': activeWorkCategory === 'javascript'
@@ -45,7 +45,7 @@
         JavaScript
       </div>
       <div
-        class="mr-4 text-gray-600 uppercase"
+        class="text-gray-600 uppercase p-2 text-center"
         @click="activeWorkCategory = 'php'"
         :class="{
           'text-purple-600 line-through': activeWorkCategory === 'php'
@@ -171,7 +171,7 @@ export default {
               name: "employee motivation module",
               url: "#",
               github: "github.com/atogz/"
-            },
+            }
           ]
         },
         ru: {
@@ -271,21 +271,26 @@ export default {
     }
   },
   methods: {
-    handleScroll (event) {
+    navigate (event) {
       if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-        if (event.wheelDelta == 120) {
-          this.$router.push("/about");
-        } else {
+        if (event.wheelDelta === -120 || event.key === "ArrowDown") {
           this.$router.push("/");
+        }
+      }
+      if (window.scrollY == 0) {
+        if (event.wheelDelta === 120 || event.key === "ArrowUp") {
+          this.$router.push("/about");
         }
       }
     }
   },
   created () {
-    window.addEventListener('wheel', this.handleScroll);
+    window.addEventListener('wheel', this.navigate);
+    window.addEventListener("keyup", this.navigate);
   },
   destroyed () {
-    window.removeEventListener('wheel', this.handleScroll);
+    window.removeEventListener('wheel', this.navigate);
+    window.removeEventListener("keyup", this.navigate);
   }
 };
 </script>
@@ -293,9 +298,7 @@ export default {
 <style>
 .my-work {
   background-image: url("../assets/image/mywork_bg.png");
-  height: 100vh;
   background-size: cover;
-  background-position: bottom;
   font-family: "Montserrat Bold", sans-serif;
   line-height: 4.75em;
   color: #333;
