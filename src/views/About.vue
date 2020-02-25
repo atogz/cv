@@ -109,10 +109,12 @@ export default {
   created() {
     window.addEventListener("wheel", this.navigate);
     window.addEventListener("keyup", this.navigate);
+    window.addEventListener("touchmove", this.navigate);
   },
   destroyed() {
     window.removeEventListener("wheel", this.navigate);
     window.removeEventListener("keyup", this.navigate);
+    window.removeEventListener("touchmove", this.navigate);
   }
 };
 </script>
