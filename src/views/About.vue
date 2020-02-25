@@ -94,7 +94,6 @@ export default {
   },
   methods: {
     navigate(event) {
-      alert('1!');
       if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
         if (event.wheelDelta <= -80 || event.key === "ArrowDown") {
           this.$router.push("/projects");

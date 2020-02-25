@@ -46,7 +46,9 @@ export default {
   },
   methods: {
     navigate(event) {
+      alert('before');
       if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+        alert('after!');
         if (event.wheelDelta <= 0 || event.key === "ArrowDown") {
           this.$router.push("/about");
         }
