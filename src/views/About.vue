@@ -94,8 +94,6 @@ export default {
   },
   methods: {
     navigate(event) {
-      console.log("event: ", window.scrollY);
-      console.log("wheelDelta: ", event.wheelDelta);
       if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
         if (event.wheelDelta <= -80 || event.key === "ArrowDown") {
           this.$router.push("/projects");
@@ -103,7 +101,6 @@ export default {
       }
       if (window.scrollY == 0) {
         if (event.wheelDelta >= 120 || event.key === "ArrowUp") {
-          console.log("debug");
           this.$router.push("/");
         }
       }
