@@ -90,28 +90,31 @@ export default {
     },
     getContent() {
       return this.content[this.getLanguage];
-    },
+    }
   },
   methods: {
-    navigate (event) {
-      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-        if (event.wheelDelta === -120 || event.key === "ArrowDown") {
+    navigate(event) {
+      console.log("event: ", window.scrollY);
+      console.log("wheelDelta: ", event.wheelDelta);
+      if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+        if (event.wheelDelta <= -80 || event.key === "ArrowDown") {
           this.$router.push("/projects");
         }
       }
       if (window.scrollY == 0) {
-        if (event.wheelDelta === 120 || event.key === "ArrowUp") {
+        if (event.wheelDelta >= 120 || event.key === "ArrowUp") {
+          console.log("debug");
           this.$router.push("/");
         }
       }
     }
   },
-  created () {
-    window.addEventListener('wheel', this.navigate);
+  created() {
+    window.addEventListener("wheel", this.navigate);
     window.addEventListener("keyup", this.navigate);
   },
-  destroyed () {
-    window.removeEventListener('wheel', this.navigate);
+  destroyed() {
+    window.removeEventListener("wheel", this.navigate);
     window.removeEventListener("keyup", this.navigate);
   }
 };

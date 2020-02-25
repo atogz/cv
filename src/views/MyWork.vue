@@ -68,8 +68,9 @@
           <router-link :to="{ name: 'project', params: { id: project.id } }" :key="project.id"
             class="w-full flex flex-col bg-gray-200 hover:bg-gray-400 cursor-pointer justify-center items-center mr-3 rounded"
           >
-            <div class="w-full text-center">
+            <div class="w-full text-center flex flex-col">
               <a :href="project.url"> {{ project.name }}</a>
+              <span class="text-sm text-gray-700">{{ project.summary }}</span>
             </div>
             <div class="w-full text-center">
               <span

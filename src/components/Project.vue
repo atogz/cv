@@ -4,6 +4,8 @@
     >
         <span class="text-gray-800 font-bold">{{ getContent.name }}</span>
     </div>
+    <div class="project-summary w-full mt-10 text-md text-gray-600 ml-10">{{ getContent.summary }}</div>
+    <div class="project-summary w-full mt-10 text-xl ml-10">{{ getContent.description }}</div>
 </main>
 </template>
 
