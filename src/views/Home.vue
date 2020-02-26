@@ -46,8 +46,13 @@ export default {
   },
   methods: {
     navigate(event) {
+      if (event.type === "touchend") alert("123");
       if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-        if (event.wheelDelta <= 0 || event.key === "ArrowDown" || event.type === "touchend") {
+        if (
+          event.wheelDelta <= 0 ||
+          event.key === "ArrowDown" ||
+          event.type === "touchend"
+        ) {
           this.$router.push("/about");
         }
       }
