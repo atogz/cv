@@ -46,6 +46,8 @@ export default {
   },
   methods: {
     navigate(event) {
+      console.log(event);
+      alert(event);
       if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
         if (event.wheelDelta <= 0 || event.key === "ArrowDown") {
           this.$router.push("/about");
@@ -56,10 +58,12 @@ export default {
   created() {
     window.addEventListener("wheel", this.navigate);
     window.addEventListener("keyup", this.navigate);
+    window.addEventListener("touchstart", this.navigate);
   },
   destroyed() {
     window.removeEventListener("wheel", this.navigate);
     window.removeEventListener("keyup", this.navigate);
+    window.removeEventListener("touchstart", this.navigate);
   }
 };
 </script>
