@@ -46,7 +46,6 @@ export default {
   },
   methods: {
     navigate(event) {
-      console.log(event);
       alert(event);
       if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
         if (event.wheelDelta <= 0 || event.key === "ArrowDown") {
