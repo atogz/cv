@@ -47,12 +47,11 @@ export default {
   methods: {
     navigate(event) {
       alert(event.type);
-      if (event.type === "touchend") alert("123");
       if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
         if (
           event.wheelDelta <= 0 ||
           event.key === "ArrowDown" ||
-          event.type === "touchend"
+          event.type === "touchstart"
         ) {
           this.$router.push("/about");
         }
