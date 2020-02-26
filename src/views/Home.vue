@@ -12,6 +12,7 @@
         >Fullstack Web Developer & IT Project Manager</span
       >
     </div>
+    {{ dummy.wheelDelta }}
   </main>
 </template>
 
@@ -21,6 +22,7 @@ export default {
   components: {},
   data() {
     return {
+      dummy: {},
       language: "",
       content: {
         en: {
@@ -46,7 +48,8 @@ export default {
   },
   methods: {
     navigate(event) {
-      alert(event);
+      this.dummy = event;
+      console.log(this.dummy);
       if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
         if (event.wheelDelta <= 0 || event.key === "ArrowDown") {
           this.$router.push("/about");
