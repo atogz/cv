@@ -46,6 +46,7 @@ export default {
   },
   methods: {
     navigate(event) {
+      alert(event.type);
       if (event.type === "touchend") alert("123");
       if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
         if (
