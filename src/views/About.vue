@@ -95,12 +95,20 @@ export default {
   methods: {
     navigate(event) {
       if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-        if (event.wheelDelta <= -80 || event.key === "ArrowDown") {
+        if (
+          event.wheelDelta <= -80 ||
+          event.key === "ArrowDown" ||
+          event.type === "touchstart"
+        ) {
           this.$router.push("/projects");
         }
       }
       if (window.scrollY == 0) {
-        if (event.wheelDelta >= 120 || event.key === "ArrowUp") {
+        if (
+          event.wheelDelta >= 120 ||
+          event.key === "ArrowUp" ||
+          event.type === "touchstart"
+        ) {
           this.$router.push("/");
         }
       }
@@ -109,12 +117,12 @@ export default {
   created() {
     window.addEventListener("wheel", this.navigate);
     window.addEventListener("keyup", this.navigate);
-    window.addEventListener("touchmove", this.navigate);
+    window.addEventListener("touchstart", this.navigate);
   },
   destroyed() {
     window.removeEventListener("wheel", this.navigate);
     window.removeEventListener("keyup", this.navigate);
-    window.removeEventListener("touchmove", this.navigate);
+    window.removeEventListener("touchstart", this.navigate);
   }
 };
 </script>
